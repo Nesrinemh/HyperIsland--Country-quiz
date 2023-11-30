@@ -3,3 +3,46 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  background-color: rgb(93, 93, 186);
+}
+
+.title {
+  font-size: 3rem;
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.container {
+  border: 2px solid black;
+  padding: 2rem;
+  margin: 3rem 10rem;
+  height: 30rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.rules,
+.scoreBoard {
+  border: 2px solid whitesmoke;
+  width: 40%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.rules-title,
+.scoreBoard-title {
+  padding-bottom: 2rem;
+}
+
+.start-btn {
+  padding: 1rem 2rem;
+  margin: 0;
+  position: absolute;
+  top: 90%;
+  left: 80%;
+  border-radius: 5%;
+  border: none;
+}
