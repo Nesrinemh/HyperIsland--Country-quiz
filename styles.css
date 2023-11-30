@@ -1,8 +1,11 @@
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+/* Home page */
 
 body {
   background-color: rgb(93, 93, 186);
@@ -44,5 +47,25 @@ body {
   top: 90%;
   left: 80%;
   border-radius: 5%;
-  border: none;
+  background-color: hotpink;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+/* Game page */
+
+.main-gamePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flag {
+  width: 30rem;
+  height: 18rem;
+  margin: 2rem 4rem;
+}
+
+.flag-input {
+  margin: 1rem;
 }
