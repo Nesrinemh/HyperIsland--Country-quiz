@@ -30,16 +30,23 @@ async function getData() {
 }
 
 async function checkAnswers(awnserObject) {
+	//temporary logs to show how it works :) 
+	console.log(awnserObject.country);
+	console.log(awnserObject.country[1]);
+	
 	console.log(awnserObject.capital);
+	console.log(awnserObject.continent);
 }
 
 // _____________________________________________________
 // Event listners
 // _____________________________________________________
 submitBtn.addEventListener("click", async function () {
-	// api function in varieble (the varieble is the object)
+	// put the function into a varieble like we said, we can now reach the object answers like this --> awnserObject.country[1] (just like in the check answers)
+	//its basically doing this getData().country 
 	let awnserObject = await getData();
-	//pass that object in to the check awnsers
+
+	//pass that object in to the check awnsers parameter so that we can use the object inside the function
 	checkAnswers(awnserObject);
 });
 
