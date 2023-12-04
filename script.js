@@ -41,6 +41,13 @@ let interval = setInterval(function () {
 
   let timerEl = document.querySelector("#timer");
   timerEl.textContent = seconds;
+  if (seconds == 0) {
+    stopTimer();
+  }
 }, 1000);
+
+function stopTimer() {
+  clearInterval(interval);
+}
 
 // how to fetch array and object at the same time. and to call loop of object

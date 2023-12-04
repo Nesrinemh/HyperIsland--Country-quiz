@@ -16,14 +16,15 @@ body {
 }
 
 .wrapper {
-    margin-top: 5rem;
+    padding: 5rem;
     max-width: 75rem;
     position: relative;
+    margin: 0 auto;
 }
 
 .timer {
     position: absolute;
-    top: 0;
+    top: 4rem;
     right: 23rem;
 }
 
