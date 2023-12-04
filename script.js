@@ -1,37 +1,60 @@
+// _____________________________________________________
+// State variables
+// _____________________________________________________
 let flagEl = document.querySelector("#flag");
 const countryEl = document.querySelector("#country");
 const capitalEl = document.querySelector("#capital");
 const continentEl = document.querySelector("#continent");
-
 const submitBtn = document.querySelector("#submitBtn");
-submitBtn.addEventListener("click", function () {
-  checkAnswers();
-  getData();
+
+// _____________________________________________________
+// functions
+// _____________________________________________________
+async function getData() {
+	let url = "https://restcountries.com/v3.1/all";
+	const response = await fetch(url);
+	const data = await response.json();
+
+	let index = Math.round(Math.random() * 250);
+	let getQuestion = data[index];
+	flagEl.src = getQuestion.flags.png;
+
+	let awnsersObj = {
+		country: getQuestion.altSpellings,
+		capital: getQuestion.capital,
+		continent: getQuestion.continents,
+	};
+
+	//calling the getData() function returns an object with the awnsers
+	return awnsersObj;
+}
+
+async function checkAnswers(awnserObject) {
+	//temporary logs to show how it works :) 
+	console.log(awnserObject.country);
+	console.log(awnserObject.country[1]);
+	
+	console.log(awnserObject.capital);
+	console.log(awnserObject.continent);
+}
+
+// _____________________________________________________
+// Event listners
+// _____________________________________________________
+submitBtn.addEventListener("click", async function () {
+	// put the function into a varieble like we said, we can now reach the object answers like this --> awnserObject.country[1] (just like in the check answers)
+	//its basically doing this getData().country 
+	let awnserObject = await getData();
+
+	//pass that object in to the check awnsers parameter so that we can use the object inside the function
+	checkAnswers(awnserObject);
 });
 
-async function getData(x) {
-  let url = "https://restcountries.com/v3.1/all";
-  const response = await fetch(url);
-  const data = await response.json();
 
-  let index = Math.round(Math.random() * 250);
-  let getQuestion = data[index];
-  console.log(getQuestion);
-  flagEl.src = getQuestion.flags.png;
 
-  let countryAnswer = getQuestion.altSpellings;
-  let capitalAnswer = getQuestion.capital;
-  let continentAnswer = getQuestion.continents;
 
-  let answers = [countryAnswer, capitalAnswer, continentAnswer];
 
-  return answers[x];
-}
-getData();
 
-async function checkAnswers() {
-  console.log(await getData([0]));
-}
 
 // timer
 let seconds = 59;
