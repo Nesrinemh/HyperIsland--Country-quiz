@@ -1,16 +1,16 @@
-let flagEl = document.querySelector("#flag");
-const countryEl = document.querySelector("#country");
-const capitalEl = document.querySelector("#capital");
-const continentEl = document.querySelector("#continent");
+let flagEl = document.querySelector('#flag');
+const countryEl = document.querySelector('#country');
+const capitalEl = document.querySelector('#capital');
+const continentEl = document.querySelector('#continent');
 
-const submitBtn = document.querySelector("#submitBtn");
-submitBtn.addEventListener("click", function () {
+const submitBtn = document.querySelector('#submitBtn');
+submitBtn.addEventListener('click', function () {
   checkAnswers();
   getData();
 });
 
 async function getData(x) {
-  let url = "https://restcountries.com/v3.1/all";
+  let url = 'https://restcountries.com/v3.1/all';
   const response = await fetch(url);
   const data = await response.json();
 
@@ -34,13 +34,26 @@ async function checkAnswers() {
 }
 
 // timer
-let seconds = 59;
-
+let seconds = 10;
+const modal = document.getElementById('myModal');
+const close = document.getElementsByClassName('close')[0];
+const modaleBtnEl = document.getElementsByClassName('modal-btn')[0];
 let interval = setInterval(function () {
   seconds -= 1;
-
-  let timerEl = document.querySelector("#timer");
+  let timerEl = document.querySelector('#timer');
   timerEl.textContent = seconds;
+  if (seconds === 0) {
+    console.log('hello');
+    modal.style.display = 'block';
+  }
 }, 1000);
 
+modaleBtnEl.onclick = function () {
+  modal.style.display = 'none';
+};
+
 // how to fetch array and object at the same time. and to call loop of object
+
+// Reset Modal
+
+let score;
