@@ -12,15 +12,18 @@ body {
 }
 
 .wrapper {
-  margin-top: 5rem;
-  max-width: 75rem;
-  position: relative;
+
+    padding: 5rem;
+    max-width: 75rem;
+    position: relative;
+    margin: 0 auto;
 }
 
 .timer {
-  position: absolute;
-  top: 0;
-  right: 23rem;
+    position: absolute;
+    top: 4rem;
+    right: 23rem;
+
 }
 
 .wrapper_input {
