@@ -7,6 +7,12 @@ const capitalEl = document.querySelector('#capital');
 const continentEl = document.querySelector('#continent');
 const submitBtn = document.querySelector('#submitBtn');
 
+
+//create local storage 
+//pointsystem, varible 
+
+
+
 // _____________________________________________________
 // functions
 // _____________________________________________________
@@ -38,32 +44,95 @@ function makeArrayUppercase(arr) {
 
   return newArr;
 }
+let answerObject = await getData();
 
-async function checkAnswers(awnserObject) {
-  let correctContinent = awnserObject.continent;
-  console.log(correctContinent.toUpperCase());
+
+
+
+function arrayUppercase(arr) {
+	let newArr = [];
+	
+	for (let i = 0; i < arr.length; i++) {
+		newArr.push(arr[i].toUpperCase())
+	}
+	
+	return newArr
 }
+
+
+
+async function checkAnswers(answerObject) {
+	let correctCountry = arrayUppercase(answerObject.country);
+	let correctCapital = arrayUppercase(answerObject.capital);
+	let correctContinent = arrayUppercase(answerObject.continent);
+
+	let countryInput = countryEl.value.toUpperCase();
+	let capitalInput = capitalEl.value.toUpperCase();
+	let continentInput = continentEl.value.toUpperCase();
+
+
+
+	if(correctCountry.includes(countryInput)){
+		console.log('yaaaaaaay')
+		//adds a point to varieble 
+	}else{
+		console.log('noo :(')
+	}
+	if(correctCapital.includes(capitalInput)){
+		console.log('yaaaaaaay')
+		//adds a point to varieble 
+	}else{
+		console.log('noo :(')
+	}
+	if(correctContinent.includes(continentInput)){
+		console.log('yaaaaaaay')
+		//adds a point to varieble 
+	}else{
+		console.log('noo :(')
+	}
+
+
 
 // _____________________________________________________
 // Event listners
 // _____________________________________________________
-submitBtn.addEventListener('click', async function () {
-  // put the function into a varieble like we said, we can now reach the object answers like this --> awnserObject.country[1] (just like in the check answers)
-  //its basically doing this getData().country
-  let awnserObject = await getData();
 
-  //pass that object in to the check awnsers parameter so that we can use the object inside the function
-  checkAnswers(awnserObject);
+submitBtn.addEventListener("click", async function (e) {
+	e.preventDefault()
+
+	checkAnswers(answerObject);
+	answerObject = await getData();
 });
+
 
 // _____________________________________________________
 // Timer & Modal
 // _____________________________________________________
+
 let seconds = 59;
 const modal = document.getElementById('myModal');
 const close = document.getElementsByClassName('close')[0];
 const modaleBtnEl = document.getElementsByClassName('modal-btn')[0];
 let interval = setInterval(function () {
+
+	seconds -= 1;
+
+	let timerEl = document.querySelector("#timer");
+	timerEl.textContent = seconds;
+	if (seconds == 0) {
+		stopTimer();
+	}
+}, 1000);
+
+function stopTimer() {
+	clearInterval(interval);
+}
+
+// how to fetch array and object at the same time. and to call loop of object
+
+
+//if timer runs out, display score modal, store name + point in local storage and append to scoreboard
+//Sort scoreboard 
   seconds -= 1;
   let timerEl = document.querySelector('#timer');
   timerEl.textContent = seconds;
