@@ -34,7 +34,7 @@ async function checkAnswers() {
 }
 
 // timer
-let seconds = 10;
+let seconds = 59;
 const modal = document.getElementById('myModal');
 const close = document.getElementsByClassName('close')[0];
 const modaleBtnEl = document.getElementsByClassName('modal-btn')[0];
@@ -50,6 +50,7 @@ let interval = setInterval(function () {
 
 modaleBtnEl.onclick = function () {
   modal.style.display = 'none';
+  window.location.href = 'index.html';
 };
 
 // how to fetch array and object at the same time. and to call loop of object
