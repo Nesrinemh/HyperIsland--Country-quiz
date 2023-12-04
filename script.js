@@ -33,4 +33,14 @@ async function checkAnswers() {
   console.log(await getData([0]));
 }
 
+// timer
+let seconds = 59;
+
+let interval = setInterval(function () {
+  seconds -= 1;
+
+  let timerEl = document.querySelector("#timer");
+  timerEl.textContent = seconds;
+}, 1000);
+
 // how to fetch array and object at the same time. and to call loop of object
