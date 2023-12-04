@@ -14,18 +14,22 @@
     <title>Coutries Quiz</title>
   </head>
   <body>
-    <main class="main">
+    <main>
       <h1 class="title" id="title">COUNTRIES QUIZ</h1>
       <div class="container">
         <div class="rules" id="rules">
           <h2 class="rules-title">RULES</h2>
-          <p>
-            Reprehenderit eu nisi labore nostrud dolor excepteur esse quis
-            adipisicing aliqua. Culpa cupidatat dolore excepteur labore veniam
-            cupidatat pariatur labore. Officia aute nostrud aute adipisicing
-            sint adipisicing. Sit consequat anim cupidatat consectetur id
-            pariatur pariatur proident tempor nostrud aute.
-          </p>
+          <ol class="rules-details">
+            <li>Register your Nickname at the bottom</li>
+            <li>You have 60 seconds.</li>
+            <li>Put one answer in each questions.</li>
+            <li>
+              Press on Next Flag button once you want to move on to another
+              flag.
+            </li>
+            <li>1 correct answer is 1 point.</li>
+            <li>Press start to dive in!</li>
+          </ol>
         </div>
         <div class="scoreBoard" id="scoreBoard">
           <h2 class="scoreBoard-title">SCORE BOARD</h2>
@@ -36,10 +40,22 @@
             <li class="scoreBoard-list_item"></li>
             <li class="scoreBoard-list_item"></li>
             <li class="scoreBoard-list_item"></li>
+            <li class="scoreBoard-list_item"></li>
           </ol>
         </div>
+        <div class="user-name">
+          <h2>YOUR NICKNAME</h2>
+          <form action="" class="user-name-form">
+            <input class="user-name-input" type="text" />
+            <button class="user-name-button">REGINSTER</button>
+          </form>
+        </div>
       </div>
-      <a href="game.html" class="start-btn" id="start-btn">START</a>
+      <div>
+        <button class="start-btn">
+          <a href="game.html" id="start-btn">START</a>
+        </button>
+      </div>
     </main>
     <script src="script.js" type="module"></script>
   </body>
