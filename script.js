@@ -4,12 +4,12 @@ const capitalEl = document.querySelector("#capital");
 const continentEl = document.querySelector("#continent");
 
 const submitBtn = document.querySelector("#submitBtn");
-submitBtn.addEventListener("click", function () {
-	checkAnswers();
-	getData(0);
+submitBtn.addEventListener("click", async function () {
+  let awnserObject = await getData();
+	checkAnswers(awnserObject);
 });
 
-async function getData(x) {
+async function getData() {
 	let url = "https://restcountries.com/v3.1/all";
 	const response = await fetch(url);
 	const data = await response.json();
@@ -18,14 +18,17 @@ async function getData(x) {
 	let getQuestion = data[index];
 	flagEl.src = getQuestion.flags.png;
 
-	let answers = [getQuestion.altSpellings, getQuestion.capital, getQuestion.continents];
+	let awnsersObj = {
+		countryAnswer: getQuestion.altSpellings,
+		capitalAnswer: getQuestion.capital,
+		continentAnswer: getQuestion.continents,
+	};
 
-	console.log(answers[x]);
+	return awnsersObj;
 }
-getData();
 
-async function checkAnswers() {
-	
+async function checkAnswers(awnserObject){
+  console.log(awnserObject.capitalAnswer)
 }
 
 // how to fetch array and object at the same time. and to call loop of object
