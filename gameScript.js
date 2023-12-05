@@ -13,6 +13,7 @@ const countryEl = document.querySelector("#country");
 const capitalEl = document.querySelector("#capital");
 const continentEl = document.querySelector("#continent");
 const submitBtnEl = document.querySelector("#submitBtn");
+const scoreEl = document.querySelector("#score");
 // _____________________________________________________
 // functions
 // _____________________________________________________
@@ -31,7 +32,7 @@ async function getData() {
     capital: getQuestion.capital,
     continent: getQuestion.continents,
   };
-
+  // console.log(answersObj);
   return answersObj;
 }
 let answerObject = await getData();
@@ -46,39 +47,28 @@ function arrayUppercase(arr) {
   return newArr;
 }
 
+let score = 0;
+
 async function checkAnswers(answerObject) {
   let correctCountry = answerObject.country.toUpperCase();
   let correctCapital = arrayUppercase(answerObject.capital);
   let correctContinent = arrayUppercase(answerObject.continent);
 
-  console.log(correctCountry);
-  console.log(correctContinent);
-  console.log(correctCapital);
-
   let countryInput = countryEl.value.toUpperCase();
   let capitalInput = capitalEl.value.toUpperCase();
   let continentInput = continentEl.value.toUpperCase();
 
-  let score = 0;
-
   if (correctCountry === countryInput) {
-    score += 1;
-    //adds a point to varieble
-  } else {
-    console.log("noo :(");
+    return score++;
   }
   if (correctCapital.includes(capitalInput)) {
-    console.log("yaaaaaaay");
-    //adds a point to varieble
-  } else {
-    console.log("noo :(");
+    return score++;
   }
   if (correctContinent.includes(continentInput)) {
-    console.log("yaaaaaaay");
-    //adds a point to varieble
-  } else {
-    console.log("noo :(");
+    return score++;
   }
+
+  console.log(score);
 }
 
 // _____________________________________________________
@@ -96,7 +86,7 @@ submitBtnEl.addEventListener("click", async function (e) {
 // Timer & Modal
 // _____________________________________________________
 
-let seconds = 3;
+let seconds = 15;
 const modal = document.getElementById("myModal");
 const close = document.getElementsByClassName("close")[0];
 const modalBtnEl = document.getElementsByClassName("modal-btn")[0];
@@ -112,13 +102,14 @@ let interval = setInterval(function () {
       ...getScoreBoard(),
       {
         name: getName(),
-        score: 20,
+        score: score,
       },
     ];
 
     setScoreBoard(scoreBoard);
 
     modal.style.display = "block";
+    scoreEl.textContent = `Your Score: ${scoreBoard[0].score}`;
   }
 }, 1000);
 

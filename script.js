@@ -15,7 +15,7 @@ const scoreBoard = getScoreBoard();
 console.log(scoreBoard);
 
 // _____________________________________________________
-// Event listners
+// Event listeners
 // _____________________________________________________
 
 startBtnEl.addEventListener("click", function (e) {
