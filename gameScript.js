@@ -1,9 +1,13 @@
 "use strict";
 
+import { getName, setScoreBoard, getScoreBoard } from "./storage.js";
+
+console.log(getName());
+
 // _____________________________________________________
 // State variables
 // _____________________________________________________
-import { userName } from "./script.js";
+
 const flagEl = document.querySelector("#flag");
 const countryEl = document.querySelector("#country");
 const capitalEl = document.querySelector("#capital");
@@ -92,7 +96,7 @@ submitBtnEl.addEventListener("click", async function (e) {
 // Timer & Modal
 // _____________________________________________________
 
-let seconds = 59;
+let seconds = 3;
 const modal = document.getElementById("myModal");
 const close = document.getElementsByClassName("close")[0];
 const modalBtnEl = document.getElementsByClassName("modal-btn")[0];
@@ -103,7 +107,17 @@ let interval = setInterval(function () {
   timerEl.textContent = seconds;
   if (seconds === 0) {
     stopTimer();
-    console.log("hello");
+
+    let scoreBoard = [
+      ...getScoreBoard(),
+      {
+        name: getName(),
+        score: 20,
+      },
+    ];
+
+    setScoreBoard(scoreBoard);
+
     modal.style.display = "block";
   }
 }, 1000);

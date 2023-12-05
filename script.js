@@ -1,3 +1,5 @@
+import { setName, getScoreBoard } from "./storage.js";
+
 // _____________________________________________________
 // State variables
 // _____________________________________________________
@@ -9,6 +11,9 @@ let userName;
 
 //
 
+const scoreBoard = getScoreBoard();
+console.log(scoreBoard);
+
 // _____________________________________________________
 // Event listners
 // _____________________________________________________
@@ -19,8 +24,6 @@ startBtnEl.addEventListener("click", function (e) {
     alert(`Please write your Nickname`);
     startBtnEl.disabled = true;
   } else {
-    userName = userNameInputEl.value;
+    setName(userNameInputEl.value);
   }
 });
-
-export  userName;
