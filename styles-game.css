@@ -12,19 +12,18 @@ body {
 }
 
 .wrapper {
-    padding: 5rem;
-    max-width: 75rem;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  padding: 5rem;
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .timer {
-    position: absolute;
-    top: 4rem;
-    right: 23rem;
-
+  position: absolute;
+  top: 4rem;
+  right: 23rem;
 }
 
 .wrapper_input {
@@ -66,22 +65,27 @@ body {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 10% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 60%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
+.modal-btn {
+  background-color: #909edb;
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
   color: black;
-  text-decoration: none;
-  cursor: pointer;
+  border-radius: 5px;
+  justify-items: center;
+}
+
+.modal-score,
+.modal-btn {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
 }
