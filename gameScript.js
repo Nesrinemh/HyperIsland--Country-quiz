@@ -1,7 +1,9 @@
 "use strict";
+
 // _____________________________________________________
 // State variables
 // _____________________________________________________
+import { userName } from "./script.js";
 const flagEl = document.querySelector("#flag");
 const countryEl = document.querySelector("#country");
 const capitalEl = document.querySelector("#capital");
@@ -26,13 +28,9 @@ async function getData() {
     continent: getQuestion.continents,
   };
 
-  //calling the getData() function returns an object with the answers
-  //   console.log(typeof answersObj.country, answersObj.country);
-  //   console.log(typeof answersObj.capital, answersObj.capital);
-  //   console.log(typeof answersObj.continent, answersObj.continent);
   return answersObj;
 }
-let answerObject = getData();
+let answerObject = await getData();
 
 function arrayUppercase(arr) {
   let newArr = [];
@@ -45,15 +43,22 @@ function arrayUppercase(arr) {
 }
 
 async function checkAnswers(answerObject) {
+  let correctCountry = answerObject.country.toUpperCase();
   let correctCapital = arrayUppercase(answerObject.capital);
   let correctContinent = arrayUppercase(answerObject.continent);
+
+  console.log(correctCountry);
+  console.log(correctContinent);
+  console.log(correctCapital);
 
   let countryInput = countryEl.value.toUpperCase();
   let capitalInput = capitalEl.value.toUpperCase();
   let continentInput = continentEl.value.toUpperCase();
 
+  let score = 0;
+
   if (correctCountry === countryInput) {
-    console.log("yaaaaaaay");
+    score += 1;
     //adds a point to varieble
   } else {
     console.log("noo :(");
@@ -78,7 +83,6 @@ async function checkAnswers(answerObject) {
 
 submitBtnEl.addEventListener("click", async function (e) {
   e.preventDefault();
-  console.log("clicked");
 
   checkAnswers(answerObject);
   answerObject = await getData();
