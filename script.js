@@ -1,13 +1,13 @@
-import { setName, getScoreBoard } from './storage.js';
+import { setName, getScoreBoard } from "./storage.js";
 
 // _____________________________________________________
 // State variables
 // _____________________________________________________
-const startBtnEl = document.querySelector('#start-btn');
-const userNameInputEl = document.querySelector('#userNameInput');
+const startBtnEl = document.querySelector("#start-btn");
+const userNameInputEl = document.querySelector("#userNameInput");
 let userName;
 //create local storage
-//pointsystem, variable
+//point system, variable
 
 //
 
@@ -18,12 +18,12 @@ console.log(scoreBoard);
 // Event listeners
 // _____________________________________________________
 
-startBtnEl.addEventListener('click', function (e) {
+startBtnEl.addEventListener("click", function (e) {
   e.preventDefault;
-  if (userNameInputEl.value == '') {
+  if (userNameInputEl.value == "") {
     alert(`Please write your Nickname`);
   } else {
     setName(userNameInputEl.value);
-    window.location.href = 'game.html';
+    window.location.href = "game.html";
   }
 });
