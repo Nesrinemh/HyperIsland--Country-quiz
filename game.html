@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles-game.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=REM:wght@200;400;600&family=Ysabeau+Office&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="./styles-game.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=REM:wght@200;400;600&family=Ysabeau+Office&display=swap"
-    rel="stylesheet" />
-  <title>Document</title>
-</head>
+  <body>
+    <div class="wrapper">
+      <div class="timer" id="timer"></div>
+      <main class="gamePage-main">
+        <img class="flag" id="flag" />
+        <div class="wrapper_input">
+          <div>
+            <label for="">Country</label>
+            <input
+              id="country"
+              class="gamePage-input"
+              type="text"
+              name="capital"
+            />
+          </div>
 
-<body>
-  <div class="wrapper">
-    <div class="timer" id="timer"></div>
-    <main class="gamePage-main">
-      <img class="flag" id="flag" />
-      <div class="wrapper_input">
+          <div>
+            <label for="">Capital</label>
+            <input id="capital" class="gamePage-input" type="text" />
+          </div>
 
-        <div>
-          <label for="">Country</label>
-          <input id="country" class="gamePage-input" type="text" name="capital" />
-        </div>
+          <div>
+            <label for="">Continent</label>
+            <input id="continent" class="gamePage-input" type="text" />
+          </div>
 
-        <div>
-          <label for="">Capital</label>
-          <input id="capital" class="gamePage-input" type="text" />
-        </div>
-
-        <div>
-          <label for="">Continent</label>
-          <input id="continent" class="gamePage-input" type="text" />
-        </div>
-
-        <div class="gamePage-btn">
-          <button id="submitBtn" class="button">Next flag</button>
+          <div class="gamePage-btn">
+            <button id="submitBtn" class="button">Next flag</button>
+          </div>
         </div>
 
         <div id="myModal" class="modal">
           <div class="modal-content">
             <p id="score" class="modal-score"></p>
-            <button class="modal-btn">
-              LET'S SEE YOUR POSITION 👀
-            </button>
+            <button class="modal-btn">LET'S SEE YOUR POSITION 👀</button>
           </div>
         </div>
       </main>
@@ -54,4 +57,3 @@
     <script src="./gameScript.js" type="module"></script>
   </body>
 </html>
-
