@@ -30,14 +30,21 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
+  gap: 1rem
+}
+
+.wrapper_input > div{
+  display: grid;
 }
 
 .flag {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
-.wrapper_input > input {
-  border-radius: 10px;
+.gamePage-input {
+  border-radius: 10rem;
   border-color: #909edb;
+  height: 2rem;
+  padding: 0 1rem;
 }
 
 .button {
