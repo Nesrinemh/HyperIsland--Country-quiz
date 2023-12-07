@@ -14,7 +14,6 @@ let userName;
 //
 
 const scoreBoard = getScoreBoard();
-console.log(scoreBoard);
 
 // _____________________________________________________
 // Event listeners
@@ -30,10 +29,8 @@ startBtnEl.addEventListener("click", function (e) {
   }
 });
 
-let sortedPlayers = (players) => {
+export let sortedPlayers = (players) => {
   return players.sort((a, b) => {
     return b.score - a.score;
   });
 };
-
-console.log(sortedPlayers(scoreBoard));
