@@ -95,8 +95,8 @@ submitBtnEl.addEventListener("click", async function (e) {
 
 let seconds = 15;
 const modal = document.getElementById("myModal");
-const close = document.getElementsByClassName("close")[0];
 const modalBtnEl = document.getElementsByClassName("modal-btn")[0];
+
 let interval = setInterval(function () {
   seconds -= 1;
 
@@ -104,7 +104,6 @@ let interval = setInterval(function () {
   timerEl.textContent = seconds;
   if (seconds === 0) {
     stopTimer();
-
     let scoreBoard = [
       ...getScoreBoard(),
       {
