@@ -21,19 +21,24 @@ console.log(scoreBoard);
 // _____________________________________________________
 
 startBtnEl.addEventListener("click", function (e) {
-  e.preventDefault;
-  if (userNameInputEl.value == "") {
-    alert(`Please write your Nickname`);
-  } else {
-    setName(userNameInputEl.value);
-    window.location.href = "game.html";
-  }
+	e.preventDefault;
+	if (userNameInputEl.value == "") {
+		alert(`Please write your Nickname`);
+	} else {
+		setName(userNameInputEl.value);
+		window.location.href = "game.html";
+	}
 });
 
 let sortedPlayers = (players) => {
-  return players.sort((a, b) => {
-    return b.score - a.score;
-  });
+	return players.sort((a, b) => {
+		return b.score - a.score;
+	});
 };
 
-console.log(sortedPlayers(scoreBoard));
+let players = sortedPlayers(scoreBoard);
+for (let i = 0; i < 7; i++) {
+	let scoreLiEl = document.createElement("li");
+	scoreLiEl.innerText = `${players[i].name} ${players[i].score}`;
+	scoreBoardEl.append(scoreLiEl);
+}
