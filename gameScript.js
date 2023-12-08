@@ -94,7 +94,7 @@ submitBtnEl.addEventListener("click", async function (e) {
 // Timer & Modal
 // _____________________________________________________
 
-let seconds = 15;
+let seconds = 60;
 const modal = document.getElementById("myModal");
 const modalBtnEl = document.getElementsByClassName("modal-btn")[0];
 
@@ -124,10 +124,6 @@ function stopTimer() {
   clearInterval(interval);
 }
 
-// how to fetch array and object at the same time. and to call loop of object
-
-//if timer runs out, display score modal, store name + point in local storage and append to scoreboard
-//Sort scoreboard
 
 modalBtnEl.onclick = function () {
   modal.style.display = "none";
