@@ -36,6 +36,7 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
+  .start-btn,
   .user-name {
     grid-column: span 2;
   }
@@ -98,7 +99,6 @@ need to fix it to not-centered */
   border: none;
   max-width: 8rem;
   margin: 0 auto;
-  grid-column: span 2;
 }
 
 .start-btn a {
