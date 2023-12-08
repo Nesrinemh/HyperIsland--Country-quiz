@@ -24,11 +24,7 @@ body {
   margin: 0 auto;
 }
 
-.button a {
-  text-decoration: none;
-}
-
-.button a:visited {
+.button:visited {
   color: black;
 }
 
