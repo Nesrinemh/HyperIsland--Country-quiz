@@ -14,7 +14,6 @@ let userName;
 //
 
 const scoreBoard = getScoreBoard();
-console.log(scoreBoard);
 
 // _____________________________________________________
 // Event listeners
@@ -30,6 +29,7 @@ startBtnEl.addEventListener("click", function (e) {
 	}
 });
 
+
 let sortedPlayers = (players) => {
 	return players.sort((a, b) => {
 		return b.score - a.score;
@@ -42,3 +42,4 @@ for (let i = 0; i < 7; i++) {
 	scoreLiEl.innerText = `${players[i].name} ${players[i].score}`;
 	scoreBoardEl.append(scoreLiEl);
 }
+
