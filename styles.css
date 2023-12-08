@@ -24,9 +24,11 @@ body {
 .container {
   padding: 2rem;
   display: grid;
+  margin: 0 auto;
   grid-template-columns: 1fr;
   gap: 2rem;
   align-items: center;
+  max-width: 50rem;
 }
 
 @media (min-width: 48rem) {
@@ -37,11 +39,6 @@ body {
   .user-name {
     grid-column: span 2;
   }
-
-  .rules,
-  .scoreBoard {
-    height: 25rem;
-  }
 }
 
 .rules,
@@ -49,7 +46,7 @@ body {
   border-bottom: 2px solid whitesmoke;
   text-align: left;
   padding: 2rem;
-  height: 18rem;
+  min-height: 18rem;
 }
 
 .scoreBoard-title,
@@ -100,8 +97,8 @@ need to fix it to not-centered */
   background-color: #909edb;
   border: none;
   max-width: 8rem;
-  display: flex;
   margin: 0 auto;
+  grid-column: span 2;
 }
 
 .start-btn a {

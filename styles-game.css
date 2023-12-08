@@ -29,10 +29,10 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  gap: 1rem
+  gap: 1rem;
 }
 
-.wrapper_input > div{
+.wrapper_input > div {
   display: grid;
 }
 
@@ -44,6 +44,7 @@ body {
   border-color: #909edb;
   height: 2rem;
   padding: 0 1rem;
+  font-size: 16px;
 }
 
 .button {
