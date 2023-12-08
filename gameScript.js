@@ -1,6 +1,7 @@
 "use strict";
 
 import { getName, setScoreBoard, getScoreBoard } from "./storage.js";
+import { sortedPlayers } from "./script.js";
 
 console.log(getName());
 
@@ -14,8 +15,13 @@ const capitalEl = document.querySelector("#capital");
 const continentEl = document.querySelector("#continent");
 const submitBtnEl = document.querySelector("#submitBtn");
 const scoreEl = document.querySelector("#score");
+
+
+const scoreBoardEl = document.querySelector("#scoreBoardList");
 let soundEl = new Audio("./scoresound.mp3");
 soundEl.volume = 0.1;
+
+
 // _____________________________________________________
 // functions
 // _____________________________________________________
@@ -75,7 +81,6 @@ async function checkAnswers(answerObject) {
 
 function clearInputs() {
   let allInputs = document.querySelectorAll("input");
-  console.log(allInputs);
   allInputs.forEach((index) => (index.value = ""));
 }
 
