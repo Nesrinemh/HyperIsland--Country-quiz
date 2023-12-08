@@ -44,6 +44,8 @@ let answerObject = await getData();
 function clearInputs() {
   let allInputs = document.querySelectorAll('input');
   allInputs.forEach((index) => (index.value = ''));
+
+  inputsEl[0].focus();
 }
 
 let interval = setInterval(function () {
