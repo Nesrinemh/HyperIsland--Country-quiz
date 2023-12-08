@@ -95,7 +95,7 @@ submitBtnEl.addEventListener("click", async function (e) {
 // Timer & Modal
 // _____________________________________________________
 
-let seconds = 60;
+let seconds = 10;
 const modal = document.getElementById("myModal");
 const modalBtnEl = document.getElementsByClassName("modal-btn")[0];
 
