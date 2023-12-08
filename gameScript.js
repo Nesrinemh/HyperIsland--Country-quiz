@@ -15,7 +15,13 @@ const capitalEl = document.querySelector("#capital");
 const continentEl = document.querySelector("#continent");
 const submitBtnEl = document.querySelector("#submitBtn");
 const scoreEl = document.querySelector("#score");
+
+
 const scoreBoardEl = document.querySelector("#scoreBoardList");
+let soundEl = new Audio("./scoresound.mp3");
+soundEl.volume = 0.1;
+
+
 // _____________________________________________________
 // functions
 // _____________________________________________________
@@ -94,7 +100,7 @@ submitBtnEl.addEventListener("click", async function (e) {
 // Timer & Modal
 // _____________________________________________________
 
-let seconds = 60;
+let seconds = 10;
 const modal = document.getElementById("myModal");
 const modalBtnEl = document.getElementsByClassName("modal-btn")[0];
 
@@ -122,8 +128,8 @@ let interval = setInterval(function () {
 
 function stopTimer() {
   clearInterval(interval);
+  soundEl.play();
 }
-
 
 modalBtnEl.onclick = function () {
   modal.style.display = "none";
