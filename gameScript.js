@@ -3,6 +3,7 @@
 // State variables
 // _____________________________________________________
 import { getName, setScoreBoard, getScoreBoard } from './storage.js';
+setScoreBoard();
 
 const flagEl = document.querySelector('#flag');
 const countryEl = document.querySelector('#country');
@@ -13,6 +14,7 @@ const scoreEl = document.querySelector('#score');
 const modal = document.querySelector('#myModal');
 const modalBtnEl = document.querySelector('.modal-btn');
 const inputsEl = document.querySelectorAll('.gamePage-input');
+const scoreDisplayEl = document.querySelector('#collectedScores');
 
 let soundEl = new Audio('./scoresound.mp3');
 let score = 0;
@@ -46,6 +48,7 @@ function clearInputs() {
   allInputs.forEach((index) => (index.value = ''));
 
   inputsEl[0].focus();
+  displayScore();
 }
 
 let interval = setInterval(function () {
@@ -73,6 +76,10 @@ let interval = setInterval(function () {
 function stopTimer() {
   clearInterval(interval);
   soundEl.play();
+}
+
+function displayScore() {
+  scoreDisplayEl.innerText = `score: ${score}`;
 }
 
 // _____________________________________________________
