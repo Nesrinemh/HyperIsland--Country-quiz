@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=REM:wght@200;400;600&family=Ysabeau+Office&display=swap"
+      rel="stylesheet"
+    />
+    <title>Countries Quiz</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&family=REM:wght@200;400;600&family=Ysabeau+Office&display=swap"
-    rel="stylesheet" />
-  <title>Countries Quiz</title>
-</head>
-
-<body>
-  <main>
-    <h1 class="title" id="title">COUNTRIES QUIZ</h1>
-    <div class="container">
-      <div class="rules" id="rules">
-        <h2 class="rules-title">RULES</h2>
-        <ol class="rules-details">
-          <li>Register your Nickname at the bottom</li>
-          <li>You have 60 seconds.</li>
-          <li>Put one answer in each questions.</li>
-          <li>
-            Press on Next Flag button once you want to move on to another
-            flag.
-          </li>
-          <li>1 correct answer is 1 point.</li>
-          <li>Press start to dive in!</li>
-        </ol>
+  <body>
+    <main>
+      <h1 class="title" id="title">COUNTRIES QUIZ</h1>
+      <div class="container">
+        <div class="rules" id="rules">
+          <h2 class="rules-title">RULES</h2>
+          <ol class="rules-details">
+            <li>Register your Nickname at the bottom</li>
+            <li>You have 60 seconds.</li>
+            <li>Put one answer in each questions.</li>
+            <li>
+              Press on Next Flag button once you want to move on to another
+              flag.
+            </li>
+            <li>1 correct answer is 1 point.</li>
+            <li>Press start to dive in!</li>
+          </ol>
+        </div>
+        <div class="scoreBoard" id="scoreBoard">
+          <h2 class="scoreBoard-title">SCORE BOARD</h2>
+          <ol class="scoreBoard-list"></ol>
+        </div>
+        <div class="user-name">
+          <h2>YOUR NICKNAME</h2>
+          <form action="" class="user-name-form">
+            <input id="userNameInput" class="user-name-input" type="text" />
+          </form>
+        </div>
       </div>
-      <div class="scoreBoard" id="scoreBoard">
-        <h2 class="scoreBoard-title">SCORE BOARD</h2>
-        <ol class="scoreBoard-list"> </ol>
+      <div>
+        <button type="submit" class="start-btn" id="start-btn">START</button>
       </div>
-      <div class="user-name">
-        <h2>YOUR NICKNAME</h2>
-        <form action="" class="user-name-form">
-          <input id="userNameInput" class="user-name-input" type="text" />
-        </form>
-      </div>
-    </div>
-    <div>
-      <button type="submit" class="start-btn" id="start-btn">START</button>
-    </div>
-  </main>
-  <script src="script.js" type="module"></script>
-</body>
-
+    </main>
+    <script src="script.js" type="module"></script>
+  </body>
 </html>

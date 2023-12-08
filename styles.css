@@ -41,8 +41,13 @@ body {
 .rules,
 .scoreBoard {
   border-bottom: 2px solid whitesmoke;
-  text-align: center;
+  text-align: left;
   padding: 2rem;
+  height: 18rem;
+}
+
+.scoreBoard-title, .rules-title {
+  margin-bottom: 1rem;
 }
 
 .rules-details {
