@@ -1,7 +1,6 @@
 'use strict';
 
 import { getName, setScoreBoard, getScoreBoard } from './storage.js';
-import { sortedPlayers } from './script.js';
 
 console.log(getName());
 
