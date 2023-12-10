@@ -1,31 +1,31 @@
-"use strict";
+'use strict';
 // _____________________________________________________
 // State variables
 // _____________________________________________________
-import { getName, setScoreBoard, getScoreBoard } from "./storage.js";
+import { getName, setScoreBoard, getScoreBoard } from './storage.js';
 setScoreBoard(getScoreBoard());
 
-const flagEl = document.querySelector("#flag");
-const countryEl = document.querySelector("#country");
-const capitalEl = document.querySelector("#capital");
-const continentEl = document.querySelector("#continent");
-const submitBtnEl = document.querySelector("#submitBtn");
-const scoreEl = document.querySelector("#score");
-const modal = document.querySelector("#myModal");
-const modalBtnEl = document.querySelector(".modal-btn");
-const inputsEl = document.querySelectorAll(".gamePage-input");
-const scoreDisplayEl = document.querySelector("#collectedScores");
+const flagEl = document.querySelector('#flag');
+const countryEl = document.querySelector('#country');
+const capitalEl = document.querySelector('#capital');
+const continentEl = document.querySelector('#continent');
+const submitBtnEl = document.querySelector('#submitBtn');
+const scoreEl = document.querySelector('#score');
+const modal = document.querySelector('#myModal');
+const modalBtnEl = document.querySelector('.modal-btn');
+const inputsEl = document.querySelectorAll('.gamePage-input');
+const scoreDisplayEl = document.querySelector('#collectedScores');
 
-let soundEl = new Audio("./scoresound.mp3");
+let soundEl = new Audio('./scoresound.mp3');
 let score = 0;
-let seconds = 60;
+let seconds = 6;
 soundEl.volume = 0.1;
 
 // _____________________________________________________
 // Rendering
 // _____________________________________________________
 async function getData() {
-  let url = "https://restcountries.com/v3.1/all";
+  let url = 'https://restcountries.com/v3.1/all';
   const response = await fetch(url);
   const data = await response.json();
 
@@ -44,8 +44,8 @@ async function getData() {
 let answerObject = await getData();
 
 function clearInputs() {
-  let allInputs = document.querySelectorAll("input");
-  allInputs.forEach((index) => (index.value = ""));
+  let allInputs = document.querySelectorAll('input');
+  allInputs.forEach((index) => (index.value = ''));
 
   inputsEl[0].focus();
   displayScore();
@@ -54,7 +54,7 @@ function clearInputs() {
 let interval = setInterval(function () {
   seconds -= 1;
 
-  let timerEl = document.querySelector("#timer");
+  let timerEl = document.querySelector('#timer');
   timerEl.textContent = seconds;
   if (seconds === 0) {
     stopTimer();
@@ -68,7 +68,7 @@ let interval = setInterval(function () {
 
     setScoreBoard(scoreBoard);
 
-    modal.style.display = "block";
+    modal.style.display = 'block';
     scoreEl.textContent = `YOUR SCORE: ${score}`;
   }
 }, 1000);
@@ -117,7 +117,7 @@ async function checkAnswers(answerObject) {
 // Event listeners
 // _____________________________________________________
 
-submitBtnEl.addEventListener("click", async function (e) {
+submitBtnEl.addEventListener('click', async function (e) {
   e.preventDefault();
 
   checkAnswers(answerObject);
@@ -126,13 +126,13 @@ submitBtnEl.addEventListener("click", async function (e) {
 });
 
 modalBtnEl.onclick = function () {
-  modal.style.display = "none";
-  window.location.href = "index.html";
+  modal.style.display = 'none';
+  window.location.href = 'index.html';
 };
 
 for (let i = 0; i < inputsEl.length; i++) {
-  inputsEl[i].addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
+  inputsEl[i].addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
       if (document.activeElement === inputsEl[0]) {
         inputsEl[1].focus();
       } else if (document.activeElement === inputsEl[1]) {
