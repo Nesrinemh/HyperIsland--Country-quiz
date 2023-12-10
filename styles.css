@@ -61,7 +61,7 @@ body {
 .scoreBoard {
   border-bottom: 2px solid whitesmoke;
   padding: 2rem;
-  min-height: 18rem;
+  min-height: 20rem;
 }
 
 .scoreBoard-title,
@@ -75,9 +75,12 @@ body {
   text-align: justify;
 }
 
-.user-name-input,
-.rules-details li,
 .scoreBoard li {
+  margin-top: 1rem;
+}
+
+.user-name-input,
+.rules-details li {
   margin-top: 0.5rem;
 }
 
