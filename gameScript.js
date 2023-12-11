@@ -18,7 +18,7 @@ const scoreDisplayEl = document.querySelector('#collectedScores');
 
 let soundEl = new Audio('./scoresound.mp3');
 let score = 0;
-let seconds = 6;
+let seconds = 60;
 soundEl.volume = 0.1;
 
 // _____________________________________________________
