@@ -104,12 +104,16 @@ async function checkAnswers(answerObject) {
   let capitalInput = capitalEl.value.toUpperCase();
   let continentInput = continentEl.value.toUpperCase();
 
-  if (
-    correctCountry === countryInput ||
-    correctCapital.includes(capitalInput) ||
-    correctContinent.includes(continentInput)
-  ) {
-    return score++;
+  if (correctCountry === countryInput) {
+    score++;
+  }
+
+  if (correctCapital.includes(capitalInput)) {
+    score++;
+  }
+
+  if (correctContinent.includes(continentInput)) {
+    score++;
   }
 }
 
