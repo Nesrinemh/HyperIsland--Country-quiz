@@ -3,7 +3,6 @@
 // State variables
 // _____________________________________________________
 import { getName, setScoreBoard, getScoreBoard } from './storage.js';
-setScoreBoard(getScoreBoard());
 
 const flagEl = document.querySelector('#flag');
 const countryEl = document.querySelector('#country');
@@ -38,7 +37,7 @@ async function getData() {
     capital: getQuestion.capital,
     continent: getQuestion.continents,
   };
-  // console.log(answersObj);
+
   return answersObj;
 }
 let answerObject = await getData();
